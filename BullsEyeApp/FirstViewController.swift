@@ -109,7 +109,7 @@ class FirstViewController: UIViewController {
         view.layer.addAnimation(transition, forKey: nil)
     }
     
-    
+    // This is getting skipped.  The score is not resetting and the round is not resetting.
     func startNewGame() {
         score = 0
         round = 0
