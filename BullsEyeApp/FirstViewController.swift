@@ -27,20 +27,20 @@ class FirstViewController: UIViewController {
         updateLabels()
         
         let thumbImageNormal = UIImage(named: "SliderThumb-Normal")
-        slider.setThumbImage(thumbImageNormal, forState: .Normal)
+        slider.setThumbImage(thumbImageNormal, for: UIControlState())
         
         let thumbImageHighlighted = UIImage(named: "SliderThumb-Highlighted")
-        slider.setThumbImage(thumbImageHighlighted, forState: .Highlighted)
+        slider.setThumbImage(thumbImageHighlighted, for: .highlighted)
         
         let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
         
         if let trackLeftImage = UIImage(named: "SliderTrackLeft") {
-            let trackLeftResizable = trackLeftImage.resizableImageWithCapInsets(insets)
-            slider.setMinimumTrackImage(trackLeftResizable, forState: .Normal)
+            let trackLeftResizable = trackLeftImage.resizableImage(withCapInsets: insets)
+            slider.setMinimumTrackImage(trackLeftResizable, for: UIControlState())
         }
         if let trackRightImage = UIImage(named: "SliderTrackRight") {
-            let trackRightResizable = trackRightImage.resizableImageWithCapInsets(insets)
-            slider.setMaximumTrackImage(trackRightResizable, forState: .Normal)
+            let trackRightResizable = trackRightImage.resizableImage(withCapInsets: insets)
+            slider.setMaximumTrackImage(trackRightResizable, for: UIControlState())
         }
     }
     
@@ -77,10 +77,10 @@ class FirstViewController: UIViewController {
                     //+ "\nThe difference is: \(difference)"
     
         let alert = UIAlertController(title: title, message: message,
-                                      preferredStyle: .Alert)
+                                      preferredStyle: .alert)
         
 
-        let action = UIAlertAction(title: "OK", style: .Default,
+        let action = UIAlertAction(title: "OK", style: .default,
                                    handler: { action in
                                               self.startNewRound()
                                               self.updateLabels()
@@ -88,12 +88,12 @@ class FirstViewController: UIViewController {
         
         alert.addAction(action)
         
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
         
     }
     
     
-    @IBAction func sliderMoved(slider: UISlider) {
+    @IBAction func sliderMoved(_ slider: UISlider) {
         currentValue = lroundf(slider.value)
         
     }
@@ -106,7 +106,7 @@ class FirstViewController: UIViewController {
         transition.type = kCATransitionFade
         transition.duration = 1
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        view.layer.addAnimation(transition, forKey: nil)
+        view.layer.add(transition, forKey: nil)
     }
     
     // This is getting skipped.  The score is not resetting and the round is not resetting.

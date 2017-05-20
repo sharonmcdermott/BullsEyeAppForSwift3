@@ -106,6 +106,7 @@
 					806878C51CE2BB1A00F50EFA = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = A5MX3EDKKD;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -261,6 +262,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharonmcdermott.BullsEyeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -275,6 +277,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sharonmcdermott.BullsEyeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
